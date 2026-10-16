@@ -1,0 +1,34 @@
+name: NAON2 front v2 padding and QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/candidates/front-v02/naon2-front-candidate-v02-raw.png'
+permissions:
+  contents: write
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install numpy==2.3.5 Pillow==12.3.0
+      - name: Verify and generate PNG exports
+        run: python scripts/finalize_front_v02.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naon2-front-v02-review-exports
+          path: assets/candidates/front-v02/outputs/
+      - name: Commit review exports
+        run: |
+          git add assets/candidates/front-v02/outputs/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git -c user.name="hibi89" -c user.email="godls5898@gmail.com" commit -m "assets: export padded NAON2 front v2 review PNGs"
+            git push origin HEAD:main
+          fi
