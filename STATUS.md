@@ -31,3 +31,10 @@
 4. 고품질 원화 승인 후 6테마 개별 작업 → 모바일/PC 품질 검수 → 크몽 정책/라이선스 검토 → 상품 등록.
 
 기준 문서: `character/MASTER_PRODUCTION_SPEC.md`, `character/REFERENCE_ISOLATION_V03.md`, `character/QUALITY_GATE.md`.
+
+## 최신 진행: SVG 원화 v0.1 (검수 대기)
+- 승인 시트 참고하여 정면·실제 90° 측면·후면 **3개 SVG 독립 벡터 시안**을 수작업으로 재구성함.
+- 2048×2048 투명 PNG 3장 로컬 생성, 해상도·투명도·SVG 경로 검증 통과.
+- 원본 부드러운 렌더 스타일과 벡터 스타일 차이 존재. **동일성·디자인 승인은 사용자 대기 중.**
+- 제작 코드/검증 코드는 GitHub에 등록하며 GitHub Actions 출력의 성공 여부는 별도로 확인.
+- `character/VECTOR_DRAFT_V01.md`를 기준으로 추후 보정, 원본 덮어쓰기 금지.

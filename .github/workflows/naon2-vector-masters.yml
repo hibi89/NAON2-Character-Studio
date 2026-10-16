@@ -1,0 +1,44 @@
+name: NAON2 vector draft build
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_vector_masters.py'
+      - 'scripts/verify_vector_masters.py'
+      - '.github/workflows/naon2-vector-masters.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vector-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned vector packages
+        run: python -m pip install CairoSVG==2.8.2 Pillow==12.3.0
+      - name: Verify input user source PNGs
+        run: python scripts/verify_assets.py
+      - name: Build editable SVG and PNG draft masters
+        run: python scripts/build_vector_masters.py
+      - name: Verify draft outputs and native dimensions
+        run: python scripts/verify_vector_masters.py
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: naon2-vector-draft-v01
+          path: assets/masters/vector-v01/
+      - name: Commit reviewed-format outputs as draft
+        run: |
+          git add assets/masters/vector-v01/
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git -c user.name='hibi89' -c user.email='godls5898@gmail.com' commit -m 'art: add editable NAON2 vector draft and 2K PNGs (not approved)'
+            git push origin HEAD:main
+          fi
