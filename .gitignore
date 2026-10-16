@@ -1,0 +1,16 @@
+# Credentials & private configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# OS/tooling
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/
+# Release archives
+dist/
+release/
+*.zip

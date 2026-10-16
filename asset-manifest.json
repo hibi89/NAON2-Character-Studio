@@ -1,0 +1,38 @@
+{
+  "project": "NAON2-Character-Studio",
+  "manifest_schema": "1",
+  "created": "2026-10-16",
+  "note": "Approved visual concept is flattened, not layered. User original images must stay byte-identical.",
+  "assets": [
+    {
+      "path": "assets/originals/naon2-gamer-original.png",
+      "role": "source-gamer",
+      "sha256": "1ea280ebebb9b88640248d3be2f643e56257dd2d31aacdca8e257f4168fd9696",
+      "bytes": 96666,
+      "pixels": [
+        208,
+        208
+      ]
+    },
+    {
+      "path": "assets/originals/naon2-astronaut-original.png",
+      "role": "source-astronaut",
+      "sha256": "08b355b4fdf4da3ec02af2b2d2a544b6abd4fe5ed62be0e8099564eec18d3425",
+      "bytes": 3681149,
+      "pixels": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "path": "assets/references/naon2-character-sheet-v1.png",
+      "role": "approved-reference-sheet-v1",
+      "sha256": "ea4624e3c8348bc9929543665014f7541e37ca1d318aa1ba2172840aa6c13efd",
+      "bytes": 2237668,
+      "pixels": [
+        1536,
+        1024
+      ]
+    }
+  ]
+}
