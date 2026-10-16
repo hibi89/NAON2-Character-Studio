@@ -14,3 +14,8 @@ All hard-gate criteria must pass before any image is designated an official mast
 | Approval | User accepts exact final artwork | Not validated |
 
 Original image SHA-256 checks and crop-pixel correctness have passed locally, but those are **not** identity or sales-quality approval.
+
+## 2026-10-16 판정 기록
+- `assets/masters/vector-v01/`: **REJECTED** — NAON2 원본과 캐릭터 정체성이 충분히 일치하지 않아 사용자 불합격. 기술 테스트 성공과 무관하게 공식 마스터/판매 이미지로 금지.
+- 정면 마스터 승인 조건은 `character/FRONT_MASTER_SPEC_V01.md`를 따른다.
+- 다음 검수는 **원본 A·승인 시트 C·신규 정면 시안**을 나란히 놓고 캐릭터 유사성을 우선 확인한다.

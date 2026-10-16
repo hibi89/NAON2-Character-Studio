@@ -32,9 +32,9 @@
 
 기준 문서: `character/MASTER_PRODUCTION_SPEC.md`, `character/REFERENCE_ISOLATION_V03.md`, `character/QUALITY_GATE.md`.
 
-## 최신 진행: SVG 원화 v0.1 (검수 대기)
-- 승인 시트 참고하여 정면·실제 90° 측면·후면 **3개 SVG 독립 벡터 시안**을 수작업으로 재구성함.
-- 2048×2048 투명 PNG 3장 로컬 생성, 해상도·투명도·SVG 경로 검증 통과.
-- 원본 부드러운 렌더 스타일과 벡터 스타일 차이 존재. **동일성·디자인 승인은 사용자 대기 중.**
-- 제작 코드/검증 코드는 GitHub에 등록하며 GitHub Actions 출력의 성공 여부는 별도로 확인.
-- `character/VECTOR_DRAFT_V01.md`를 기준으로 추후 보정, 원본 덮어쓰기 금지.
+## 디자인 판정: 벡터 원화 v0.1 — REJECTED (2026-10-16)
+- 사용자 판정: **기존 나온이와 다른 고양이처럼 보임**. 기술적으로 SVG·2K PNG를 생성했더라도 공식 원형 채택 불가.
+- `assets/masters/vector-v01/`: 보존하는 실패 이력. 공식 캐릭터 기준·크몽 원화·파생 제작에 **사용 금지**.
+- `character/VECTOR_DRAFT_V01.md`: 거절 사유 명시.
+- **새 목표: 정면 한 장 우선.** `character/FRONT_MASTER_SPEC_V01.md` 기준으로 원본 기반 정밀 편집을 진행하되, 디자인 동일성 확인 전에는 측면·후면과 6개 테마를 만들지 않음.
+- 정면 공식 마스터: **미제작/미승인**. 외부 도구로 원본을 전송하려면 사전 승인 필요.

@@ -1,3 +1,15 @@
+# REJECTED — NAON2 vector draft v0.1 (2026-10-16)
+
+**User design decision: REJECTED.** The vector cat looked noticeably different from the supplied NAON2 character. Technical rendering success and 2048×2048 output **do not constitute visual fidelity or brand approval**.
+
+**Asset handling:** Keep original SVG/PNG and scripts as an archival technical experiment; do not delete, overwrite, publish, sell or use as references for future NAON2 work. Do not designate these files as official masters. All brand-facing derivatives must trace to the original gamer, astronaut, and approved v1 sheet instead.
+
+**Reason for rejection:** Face shape, eye treatment, soft fur shading and overall character impression deviated from the original. The SVG is too flat and cartoon-like compared with the original softly modeled style. Native 2048px drawing size does not correct identity drift.
+
+**Revised plan:** Only design a single front-view original-preserving master, following [FRONT_MASTER_SPEC_V01.md](FRONT_MASTER_SPEC_V01.md); require user identity acceptance before generating a side/back or six themes.
+
+---
+
 # NAON2 vector art redraw v0.1 — REVIEW DRAFT
 
 ## Why this approach
