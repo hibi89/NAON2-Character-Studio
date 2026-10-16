@@ -1,0 +1,61 @@
+{
+  "project": "NAON2",
+  "kind": "original editable SVG redraw + 2K vector-render PNG",
+  "note": "2K output is a vector rendering, not a 2K copy of the original raster illustration. User likeness approval and legal review pending.",
+  "items": [
+    {
+      "view": "front",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "paths": 39,
+      "visible_bounds": [
+        483,
+        246,
+        1792,
+        1858
+      ],
+      "svg_sha256": "3fb2d43c8eeb94838221a74d7947746785c9edc87bd1b0acd02c5d778d687bd0",
+      "png_sha256": "c251a53a0643c18354e6ff8c373ce04f50a6863569068f864371a336ee0337d7",
+      "png_bytes": 470625,
+      "status": "DRAFT, VISUAL USER APPROVAL REQUIRED"
+    },
+    {
+      "view": "side",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "paths": 18,
+      "visible_bounds": [
+        558,
+        260,
+        1784,
+        1844
+      ],
+      "svg_sha256": "91090376026560c8206b0d67fbe1b9cc33e987849155a35984108405940d4b26",
+      "png_sha256": "76a4472b6d6d085e32dc69d936d961f2ca8602baaa7a931d37904c976b47855f",
+      "png_bytes": 323098,
+      "status": "DRAFT, VISUAL USER APPROVAL REQUIRED"
+    },
+    {
+      "view": "back",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "paths": 13,
+      "visible_bounds": [
+        497,
+        277,
+        1822,
+        1848
+      ],
+      "svg_sha256": "04502676a96b0745b9ca9f7358bdd63c00b429881b9f29abd617a20a2212336a",
+      "png_sha256": "61b96e009218783aaabda5bbf3d06680bf84e3b1ee62bdc98d21cca5b863683d",
+      "png_bytes": 318581,
+      "status": "DRAFT, VISUAL USER APPROVAL REQUIRED"
+    }
+  ]
+}
