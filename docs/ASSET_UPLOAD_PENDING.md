@@ -1,13 +1,9 @@
-# PNG 바이너리 업로드 대기
+# 원본 PNG 업로드 상태: 완료
 
-문서와 검증 코드는 GitHub `main`에 등록됐지만, 현재 GitHub 커넥터가 작업 공간의 이미지 파일을 바이너리로 직접 업로드하지 못해 3개 PNG는 아직 원격 저장소에 없습니다.
+이 문서는 과거 PNG 업로드 대기 기록을 보존하기 위해 남겼습니다.
 
-| 경로 | 원본 크기 |
-| --- | ---: |
-| `assets/originals/naon2-gamer-original.png` | 96,666 bytes |
-| `assets/originals/naon2-astronaut-original.png` | 3,681,149 bytes |
-| `assets/references/naon2-character-sheet-v1.png` | 2,237,668 bytes |
+2026-10-16에 원본 PNG 3개가 GitHub Private 저장소 `main`에 업로드됐고, 원본 파일에서 재계산한 Git blob SHA가 모두 일치함을 확인했습니다.
 
-이미지는 이 대화에서 제공된 `NAON2-Character-Studio-initial.zip` 안에 변경 없이 보존됐습니다. 이 ZIP을 다운로드해 보관하십시오. GitHub에 파일들을 업로드할 때 임의로 압축하거나 다시 저장하지 마십시오.
+상세 검증 증거: [ASSET_VERIFICATION_2026-10-16.md](ASSET_VERIFICATION_2026-10-16.md).
 
-업로드 후 `python scripts/verify_assets.py`로 SHA-256·크기·해상도를 비교합니다. 원본별 해시는 `asset-manifest.json`을 참고하십시오.
+해당 이미지들은 이제 ZIP에서 수동 업로드할 필요가 없습니다. 향후 수정/재압축/덮어쓰기는 금지하며 파생본은 별도 경로에 추가합니다.
