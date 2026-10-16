@@ -1,0 +1,58 @@
+{
+  "source_file": "assets/references/naon2-character-sheet-v1.png",
+  "source_sha256": "ea4624e3c8348bc9929543665014f7541e37ca1d318aa1ba2172840aa6c13efd",
+  "views": [
+    {
+      "view": "front",
+      "filename": "naon2-front-reference-v03.png",
+      "dimensions": [
+        214,
+        213
+      ],
+      "bytes": 72759,
+      "sha256": "9602b2034e8abf7a84bd6febab84b68d0613afc17ffdc85857e24a153b2cbfa2",
+      "source_crop": [
+        19,
+        475,
+        233,
+        688
+      ],
+      "kind": "approved-source transparent reference (not native high-resolution master)"
+    },
+    {
+      "view": "three-quarter",
+      "filename": "naon2-three-quarter-reference-v03.png",
+      "dimensions": [
+        185,
+        216
+      ],
+      "bytes": 62492,
+      "sha256": "b7ac0faaf54ba5bd9a1ac3c2dc6bab5f45d1e150db98c23624483e8090f54a98",
+      "source_crop": [
+        219,
+        473,
+        404,
+        689
+      ],
+      "kind": "approved-source transparent reference (not native high-resolution master)"
+    },
+    {
+      "view": "back",
+      "filename": "naon2-back-reference-v03.png",
+      "dimensions": [
+        213,
+        215
+      ],
+      "bytes": 58464,
+      "sha256": "eedc7a4c275dc1678ae8b2197383bf3f9c56f62152c2edcbff648d897c6b1761",
+      "source_crop": [
+        388,
+        474,
+        601,
+        689
+      ],
+      "kind": "approved-source transparent reference (not native high-resolution master)"
+    }
+  ],
+  "status": "segmented reference only; new master pending"
+}
