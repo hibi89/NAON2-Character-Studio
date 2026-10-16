@@ -1,0 +1,45 @@
+name: NAON2 approved reference cutouts
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/isolate_model_references.py'
+      - 'requirements-reference.txt'
+      - 'assets/references/naon2-character-sheet-v1.png'
+      - '.github/workflows/naon2-reference-cutouts.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  isolate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install system font
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-nanum
+      - name: Install image processing dependencies
+        run: python -m pip install -r requirements-reference.txt
+      - name: Verify original SHA-256 and dimensions
+        run: python scripts/verify_assets.py
+      - name: Regenerate isolated transparent references
+        run: python scripts/isolate_model_references.py
+      - name: Archive the generated assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: naon2-references-v03
+          path: assets/derivatives/reference-isolates-v03/
+      - name: Commit generated files without rewriting history
+        run: |
+          git add assets/derivatives/reference-isolates-v03/
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git -c user.name='hibi89' -c user.email='godls5898@gmail.com' commit -m 'assets: add NAON2 transparent character references v0.3'
+            git push origin HEAD:main
+          fi
