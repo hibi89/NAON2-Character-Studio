@@ -1,3 +1,11 @@
+## [2026-10-17 · 다음 '3' 실행 결과: 겨울 신규 원화 생성 방식 Stop & Pivot / 참조 고정형 편집 준비]
+- **상태: PARTIAL / 겨울 독립 완성 원화 0장 / 크몽 840876 미변경.** GitHub main 출발 HEAD `59adfd35cca102acd3c91c4d1dd5a4887c9e966d`. 기존 구매 RC Full 46 PNG/Wallpaper 19 PNG 및 코드·CI 재작업하지 않음.
+- ChatGPT 이미지 도구가 단독 그림 지시에도 또 다시 **가격·메뉴·프로필이 포함된 홍보 포스터**를 출력(시각 FAIL). 동일 방법 재시도 중단. 구형 플랫 눈사람/설경 합성 역시 캐릭터 화풍 미일치로 실패 확인. 둘 다 판매 마스터에 미포함.
+- 정확한 자료 3개(공식 1536×1024 프로필 SHA `7641e2ea…`, 1254×1254 게임 나온이 원본 SHA `b67e1e34…`, 505×282 겨울 캡처 **참고 전용**)를 바이트 보존하여 임시 로컬 준비 ZIP `NAON2_WINTER_REFERENCE_EDIT_READY_20261017.zip` 생성. **4,644,562 B, SHA256 `658e5a7e09f0c1e7c071cae6ab148a7b2702993e25d1bb914f9d29814f58df58`, 5멤버 ZIP CRC PASS.** 이 파일은 현재 채팅 다운로드로만 전달하며 GitHub에는 문서/해시를 보존, 외부 AI에 전송하지 않음.
+- 기존 출력 실패와 다른 경로: 참조 이미지 고정형 편집 가능한 Runway 연결 대안을 조사/제안함. **계정 연결 미확인, 외부 이미지 송신/유료 과금 미실시.** 별도 사용자 승인 필요한 작업은 착수하지 않는다.
+- 필수 인수인계: `products/kmong-vol01/WINTER_REFERENCE_EDIT_HANDOFF_2026-10-17.md` (생성 커밋 `1d9486775c516097bc8d62c952201442435137ca`), 성공 게이트/캐릭터 4발/이빨/눈/꼬리와 원본 해시 명시.
+- **다음 작업**: 연결/승인 확인 후 독립 겨울 1장 제작 및 시각 검수. 단독 고품질 원화 확보 전 Full 51 / Wallpaper 23 목표 구성은 **미실현**, 기존 ZIP 46/19 변경 금지. 최종 사용자 승인 후에만 두 ZIP 재패키징·크몽 840876 Codex 편집. Vercel 미적용.
+
 ## [2026-10-17 · '3' 재개 / 겨울 패키징 원본 코드 전체 GitHub 반영 완료 / 신규 원화 대기]
 - **완료(코드·검증):** `products/kmong-vol01/winter_release_pipeline.py`, 최신 `verify_release_gate.py`, 테스트·실제 RC smoke test·승인 TEMPLATE·README의 **6개 GitHub 바이너리/문자 내용 blob SHA = 로컬 원본 6/6**. 소스와 테스트는 main에 영구 보존. GitHub Actions `NAON2 winter package safety tests` run **39029592559**, SHA **c728b16555029c3b65fb2cd5dcfad681caeeff91**, **completed/success**, Python 3.11 unit **11/11 PASS** 및 없는 ZIP 차단 검사. 로컬 실제 2 RC의 SHA/CRC 검증 PASS.
 - **중요 수정:** 배경화면 팩에 겨울 **독립 원화 파일도 포함**시켜야 하는 누락 오류 수정(미래 목표 Full 51 PNG / Wallpaper **23 PNG**, 기존 46/19 RC는 무변경). 가로 2560×1440 네이티브 원화 해상도 인정; Wallpaper 상세페이지 표-안내 겹침 방지. 완성 원화 획득 전 최종 수량으로 광고/등록 금지.
