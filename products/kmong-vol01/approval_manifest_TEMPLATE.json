@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "NOTE": "TEMPLATE ONLY / NOT AN APPROVAL / ALL FLAGS MUST REMAIN FALSE UNTIL EXPLICIT USER REVIEW",
+  "winter_master_sha256": null,
+  "profile_sheet_sha256": "7641e2ea75de3fdaf3167a38a92b17eaeb01a314ab04c39bd51f70fb169004ac",
+  "reviewed_by": null,
+  "rights_basis": "",
+  "source_provenance": "",
+  "is_independent_new_artwork": false,
+  "not_screenshot_or_crop": false,
+  "not_upsampled_source": false,
+  "character_identity_approved": false,
+  "exactly_four_legs_visual_qa": false,
+  "eyes_teeth_tail_visual_qa": false,
+  "image_quality_approved": false,
+  "usage_rights_verified": false,
+  "user_approved_for_packaging": false
+}
