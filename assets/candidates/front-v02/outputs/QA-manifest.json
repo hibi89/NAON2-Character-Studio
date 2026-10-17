@@ -1,0 +1,47 @@
+{
+  "stage": "review-candidate-NOT-official-master",
+  "source_sha256": "fcf6cd58be831bc66ebf72039061fa0d545696ac79f0c3396247eca78b48d059",
+  "source_native_px": [
+    1254,
+    1254
+  ],
+  "export_px": [
+    2048,
+    2048
+  ],
+  "upscaling": true,
+  "new_native_detail": false,
+  "transparent_padding_px": 122,
+  "subject_horizontal_shift_px": 60,
+  "subject_bbox_2048": [
+    295,
+    270,
+    1753,
+    1761
+  ],
+  "subject_margins_2048_left_top_right_bottom": [
+    295,
+    270,
+    295,
+    287
+  ],
+  "edge_alpha_counts": {
+    "top": {
+      "nonzero_alpha": 0,
+      "strong_alpha": 0
+    },
+    "bottom": {
+      "nonzero_alpha": 8,
+      "strong_alpha": 0
+    },
+    "left": {
+      "nonzero_alpha": 5,
+      "strong_alpha": 0
+    },
+    "right": {
+      "nonzero_alpha": 0,
+      "strong_alpha": 0
+    }
+  },
+  "signoff": "requires user review and commercial-rights checks"
+}
