@@ -1,0 +1,34 @@
+name: NAON2 Vol01 selected 15 QA and packaging
+on:
+  push:
+    paths:
+      - '.github/workflows/naon2-vol01-selected15.yml'
+      - 'products/kmong-vol01/build_selected15.py'
+      - 'assets/selected/vol01/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package-selected-15:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image tools and Korean font
+        run: |
+          python -m pip install --quiet Pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-nanum
+      - name: Verify every original and build buyer and seller review ZIPs
+        run: python products/kmong-vol01/build_selected15.py
+      - name: Upload checked images and archives (seller review, NOT approved for sale)
+        uses: actions/upload-artifact@v4
+        with:
+          name: NAON2_VOL01_15_ORIGINALS_REVIEW
+          path: |
+            build/NAON2_WORLD_VOL01_REVIEW/*.zip
+            build/NAON2_WORLD_VOL01_REVIEW/*.txt
+            build/NAON2_WORLD_VOL01_REVIEW/*.json
+            build/NAON2_WORLD_VOL01_REVIEW/marketplace_images/*.jpg
+          retention-days: 30
+          if-no-files-found: error
