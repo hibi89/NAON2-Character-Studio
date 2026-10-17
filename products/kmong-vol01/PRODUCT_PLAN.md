@@ -53,3 +53,8 @@
 | 15 | `assets/selected/vol01/황금빛 기차 여행의 고양이 친구.png` | 2463836 | `691c944694bf6cba6ab38f02aaaee87fda52e639` |
 
 원본 바이트 합계: **30645267** bytes, 15 PNG, GitHub HEAD `5c0ccd763c394abcd81e8f64e4e5a39103ef771d`에서 확인.
+
+## 2026-10-17 · 실제 구현·검증 결과 (최신)
+- [15원본 이미지별 픽셀·SHA/15장 ZIP/홍보 6장 QA](VOL01_15_ORIGINALS_BUILD_QA_2026-10-17.md).
+- Original PNG 15장 unchanged, 디지털 원본 파일 전체 포함. 13장 1254x1254; 1장 208x208; 1장 379x384.
+- Buyer ZIP 후보 30,650,596B, SHA256 `d4e0554622a9a74a0cf47009028bbdc1ea51ec883c86aa1fb606b27e266f3847`; Seller 패키지 후보 33,618,429B. GitHub Actions run 39006112541 success, 원본 15/15 verified. 실제 크몽 제출 전 상업권·카테고리/가격/사용자 최종 승인 필요.
