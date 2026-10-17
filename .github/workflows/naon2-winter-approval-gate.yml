@@ -1,0 +1,37 @@
+name: NAON2 winter artwork approval gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'products/kmong-vol01/winter_art_acceptance.py'
+      - 'products/kmong-vol01/test_winter_art_acceptance.py'
+      - '.github/workflows/naon2-winter-approval-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check pillow
+      - name: Syntax
+        run: python -m py_compile products/kmong-vol01/winter_art_acceptance.py products/kmong-vol01/test_winter_art_acceptance.py
+      - name: Offline approval contract tests
+        run: cd products/kmong-vol01 && python -m unittest -v test_winter_art_acceptance.py
+      - name: Production release must remain blocked when no approved original exists
+        shell: bash
+        run: |
+          if python products/kmong-vol01/winter_art_acceptance.py --master unavailable_original.png > gate_result.json; then
+            echo 'ERROR: missing winter artwork incorrectly accepted'
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          data=json.load(open('gate_result.json'))
+          assert data['approved'] is False
+          print('Release blocked as intended')
+          PY
