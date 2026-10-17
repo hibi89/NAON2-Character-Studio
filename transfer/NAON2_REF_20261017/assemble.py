@@ -16,7 +16,8 @@ with target.open("wb") as fout:
         data=(here/p["filename"]).read_bytes()
         if len(data)!=p["bytes"]:
             raise SystemExit(f"size FAIL {p['filename']}: {len(data)} expected {p['bytes']}")
-        gitsha=hashlib.sha1(f"blob {len(data)}\\0".encode().replace(b"\\0",b"\\x00")+data).hexdigest()
+        git_header=b"blob "+str(len(data)).encode("ascii")+bytes([0])
+        gitsha=hashlib.sha1(git_header+data).hexdigest()
         if gitsha!=p["git_blob_sha"]:
             raise SystemExit(f"Git blob SHA FAIL {p['filename']}")
         fout.write(data)
