@@ -1,5 +1,15 @@
 # NAON2 Character Studio — 나온이
 
+## [2026-10-17 · 휴대폰 사용자를 위한 GitHub 임시 레퍼런스 업로드 · 검증 완료]
+- **최신 확정:** 사용자는 모바일 이용 중이므로 ZIP을 내려받거나 재첨부시키지 않는다. 참고 자료는 비공개 GitHub `main`의 임시 위치에 **실제 바이너리로 업로드했다**.
+- **GitHub 임시 경로:** `transfer/NAON2_REF_20261017/` — **32개 `part_000.bin`~`part_031.bin` (원본 합계 13,050,958B) + `manifest.json` + `assemble.py` + `README.md` + `.gitignore`**. 레퍼런스 ZIP 하나를 32개 바이너리로 분할해 올렸으며 코드로 동일한 ZIP을 복원할 수 있다. 이는 구매자 납품 ZIP이 아닌 다음 채팅용 **임시 레퍼런스**다.
+- **GitHub Actions 검증 성공:** `.github/workflows/naon2-refpack-temp.yml`, 실행 `39023003603`, 상태 **completed/success**, artifact **`NAON2_TEMP_REFERENCE_20261017` (ID `12096579552`, 만료 예정 2026-10-20T09:56:32Z)**. 첫 실행 `39022970384`는 조립 스크립트 NUL 문자 검사 오류로 실패했으나 고친 후 두 번째 실행은 성공했다. 같은 오류 재시도 금지.
+- **ChatGPT 직접 E2E 재검증:** 성공한 Actions 아티팩트 ZIP을 GitHub에서 실제 다운로드해 내부의 `NAON2_20261017_NEXT_CHAT_REFERENCE_PACK.zip`을 원본과 바이트 비교 **동일(True)**; 크기 **13,050,958B**, SHA-256 **`65903d58ac15c41e5b9180c1cc64f835e0f577c1f4e7b27b94eb1f6b172c16a3`**, 외부 ZIP CRC **PASS**, 내부 원본 자료 14개, 원래 ZIP CRC PASS.
+- **다음 채팅방 즉시 작업 방법**: GitHub `main` 최신 HEAD → `NEXT_CHAT_HANDOFF.md` & `products/kmong-vol01/NAON2_2026-10-17_EVENING_TWO_MENU_EXECUTION.md` → **GitHub run 39023003603의 artifact ID 12096579552를 GitHub 연결로 직접 다운로드** 후 ZIP 압축 해제해 14개 원본 레퍼런스 사용. 직접 로컬 아카이브 다운로드가 필요한 경우에도 사용자에게 휴대폰 수동 다운로드 요구하지 말 것. 아티팩트 만료 시 `python3 transfer/NAON2_REF_20261017/assemble.py`를 Git checkout에 실행하면 동일 ZIP 복원 및 SHA 검사 가능.
+- **다음 담당 필수 삭제:** 다음 채팅방이 아티팩트/원본 자료를 실제로 열고 필요한 완성 원화를 적정 영구 위치에 보존한 **후에만**, `transfer/NAON2_REF_20261017/` 폴더 **전체(32개 바이너리 + 마스터 인수인계/조립 코드 포함)**와 `.github/workflows/naon2-refpack-temp.yml`을 **GitHub `main`에서 삭제하는 청소 커밋**을 남겨라. `STATUS.md`, `HANDOFF.md`, `NEXT_CHAT_HANDOFF.md`, `README.md`, `AGENTS.md`도 삭제 완료 사실·SHA 반영. 확인/보존 전 먼저 지우지 말 것. Git 이력에는 커밋된 바이너리가 남을 수 있으므로 민감 파일 저장 경로로 쓰지 말 것.
+- **원래 사용자 지시 유지:** ① 풀컬렉션 19,900원 ② 배경화면 팩 9,900원 제작; 프로필 시트는 **모든 나온이 상품 공통 실제 증정 + 메인**, 귀여운 눈사람·방한모·목도리 **겨울 나온이 단독 고화질 신규 원화** 제작·포함, 이미 승인 대기인 크몽 840876 편집은 사용자 최종 승인 뒤 Codex 처리. ZIP 아카이브에 포함된 시안은 사용자의 최종 상품 외형 승인과 별개. 제작용 레퍼런스와 실제 구매자용 ZIP을 혼동하지 않는다.
+
+
 ## [2026-10-17 저녁 최우선 사용자 결정 · 기존 지시 대체]
 - **오늘 확정한 두 판매 메뉴만 제작:** ① NAON2 디지털 컬렉션 (Full Collection) **19,900원**, ② NAON2 배경화면 팩 (Wallpaper Pack) **9,900원**. 14,900원 SNS 및 24,900원 감정 스티커는 향후 별도.
 - **크몽 기존 서비스 840876을 편집해 두 메뉴를 구성하려는 최신 사용자 요청**. 현 상태는 **6,000원 단일 상품 제출·승인 대기**로 보고되었고, 새로운 두 메뉴/가격 등록·제출·승인은 **아직 하지 않음**. 상품 삭제/중복 신규 등록 금지. 사용자가 외출에서 돌아와 최종 파일 승인한 뒤 Codex만 실제 폼 편집·재심사.
