@@ -13,11 +13,13 @@ User preferred the v2 face direction over the previously rejected flat SVG; proc
 - White + dark background JPEG previews and comparison sheet generated.
 - Original v2 SHA-256 unchanged; output ZIP integrity checked.
 
-## Source file handling / pending sync
-Only the source image below must be uploaded once to private GitHub to reproduce the export:
-`assets/candidates/front-v02/naon2-front-candidate-v02-raw.png`.
-
-**This PNG is not in GitHub yet.** It is in the chat-delivered `NAON2-front-v02-finalization.zip` (the file named `naon2-front-v02-original-1254-unchanged.png`, identical to the required upload source). Before upload, rename the copied file to the required path; do **not** resave or recompress it. Automation triggers only on source upload and verifies SHA-256 before writing outputs. GitHub docs/script alone must not be mistaken for deployed final PNGs.
+## Source file handling / remote sync — completed 2026-10-17
+GitHub source image exists and has been validated at `assets/candidates/front-v02/naon2-front-candidate-v02-raw.png` (1254×1254, 1,511,047 bytes, expected SHA-256 unchanged).
+- Upload commit: `ac45833a36d177bf81c7c63fd2b3e113eb3d697f`
+- GitHub Actions run: https://github.com/hibi89/NAON2-Character-Studio/actions/runs/38992520700 — **completed/success**.
+- Outputs commit: `14f5740dea5535efb7b28ae4df44812c0870f1ac`.
+- Outputs and manifest: `assets/candidates/front-v02/outputs/`. This is **review-candidate-NOT-official-master**; upscale does not produce new native details.
+The previous chat-delivered ZIP can be retained for archive only; **no manual reupload is needed**.
 
 ## Remaining QA
 - User visual approval of this exact padded v2.

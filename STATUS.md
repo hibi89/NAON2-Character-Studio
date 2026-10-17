@@ -1,4 +1,4 @@
-# STATUS — 2026-10-16
+# STATUS — 현재 상태는 맨 아래 최신 날짜 항목 및 NEXT_CHAT_HANDOFF.md 참고
 
 | 작업 | 상태 | 검증 근거 |
 | --- | --- | --- |
@@ -71,3 +71,13 @@
 - 같은 분리 방식 추가 반복 중단. **사용 가능한 측면 공식 마스터는 아직 0장**.
 - 공식 Gemini 문서의 캐릭터 360도 참조 이미지 방식 및 Runway/Adobe 편집 대안 검토. 도구 연결/원본 외부 업로드/유료 크레딧은 사용자 승인 후에만 수행.
 - 단계별 제작 기준서 `character/SIDE_MASTER_PIVOT_V02.md` 작성. GitHub 기록만 갱신하며 이미지 원본은 그대로 보존.
+
+## 2026-10-17 · 정면 v2 원본 업로드 및 GitHub 자동 보정 성공 (최신 사실)
+- Codex가 로컬 작업용 **별도 Git 클론**을 사용해 PNG를 검증·업로드함. 기존 E드라이브 폴더에 `.git`이 없어서 원래 폴더는 유지됨.
+- 원본 파일 `assets/candidates/front-v02/naon2-front-candidate-v02-raw.png`: 1254×1254 PNG, 1,511,047바이트, SHA-256 `fcf6cd58be831bc66ebf72039061fa0d545696ac79f0c3396247eca78b48d059`.
+- 원본 업로드 커밋: `ac45833a36d177bf81c7c63fd2b3e113eb3d697f`. Actions `.github/workflows/naon2-front-v02.yml` run [#38992520700](https://github.com/hibi89/NAON2-Character-Studio/actions/runs/38992520700): `completed/success`, 생성/아티팩트/커밋 단계 전부 성공.
+- 최종 산출 커밋 `14f5740dea5535efb7b28ae4df44812c0870f1ac`, 생성 산출물 6개(투명 2048 PNG, 1498 캔버스 PNG, 비교 PNG, 미리보기 JPG 2장, QA manifest)를 `assets/candidates/front-v02/outputs/`에서 독립 검증.
+- `QA-manifest.json`: `stage=review-candidate-NOT-official-master`, `upscaling=true`, `new_native_detail=false`, 외곽 2048 여백 L/T/R/B=295/270/295/287px. **네이티브 2K 신원화 아님**. 사용자 외형 최종 승인/라이선스·상업권 검증 대기.
+- **이전 날짜 항목의 '정면 v2 미업로드/Actions 미실행'은 당시 기록으로만 해석**. 최신 현황은 본 항목을 우선한다.
+- 작업 모델: 기본 **사용자+ChatGPT 2인**, Codex는 직접 로컬 업로드 등 예외 작업만. 다음 채팅방 한도 대비 `NEXT_CHAT_HANDOFF.md`를 만들고 매 작업 완료 시 갱신하도록 규칙 추가.
+- 다음 단계: 정면 v2 외형 시각 검수 후 참조 고정 기반으로 **90° 측면 한 장**만 우선 검증. 기존 잘린 패널 추출법 반복 금지.

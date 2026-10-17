@@ -2,7 +2,7 @@
 작성: 2026-10-17 / 상태: 작업 경로 변경, 신규 마스터 미완료
 
 ## 입력 원본 (우선순위)
-1. **Identity / main**: `assets/candidates/front-v02/naon2-front-candidate-v02-raw.png` — 사용자 선호 정면 v2, 1254×1254 RGBA. **GitHub 미업로드**. 대화에서 파일은 제공했으며 SHA-256: `fcf6cd58be831bc66ebf72039061fa0d545696ac79f0c3396247eca78b48d059`.
+1. **Identity / main**: `assets/candidates/front-v02/naon2-front-candidate-v02-raw.png` — 사용자 선호 정면 v2, 1254×1254 RGBA. **GitHub 업로드 완료(2026-10-17), 정면 후보 상태**. 대화에서 파일은 제공했으며 SHA-256: `fcf6cd58be831bc66ebf72039061fa0d545696ac79f0c3396247eca78b48d059`.
 2. **Source primary**: `assets/originals/naon2-gamer-original.png` — 최초 게이머 이미지, 얼굴/표정/그림체 기준.
 3. **Source secondary**: `assets/references/naon2-character-sheet-v1.png` — 사용자가 승인한 도감 시트의 털색/체형 및 꼬리.
 4. **Style auxiliary**: `assets/originals/naon2-astronaut-original.png` — 다른 각도에서 같은 캐릭터인지 비교용.
@@ -51,7 +51,7 @@ Do not redesign the original cat; do not change its eye style or facial mask. Re
 
 ## 현재 소유·저장 상태
 - GitHub `main`: 기존 원본·승인 시트 및 QA 보고서 보존.
-- 프런트 v2 raw PNG: 대화 다운로드 파일은 있음; GitHub 아직 없음.
+- 프런트 v2 raw PNG: **GitHub 원본 업로드 완료(커밋 `ac45833`)**, 자동 보정 run `38992520700` 성공(출력 커밋 `14f5740`).
 - 실패한 GrabCut 출력: 로컬 검사 파일. 사용 승인 전 외부 전송·GitHub 원화 승격 금지.
 - 새 측면 마스터: **미제작**, 상업화 미승인.
 - 외부 서비스 연결/원본 업로드/결제 전 **사용자 동의** 필요.

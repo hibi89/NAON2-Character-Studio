@@ -2,7 +2,15 @@
 
 이 저장소를 변경하는 AI/개발자의 작업 규칙입니다.
 
+## 대화방 이동·인수인계 최우선 규칙
+- **작업 시작 시 반드시 `NEXT_CHAT_HANDOFF.md`를 먼저 읽고 최신 GitHub 상태와 대조한다.** 사용자가 과거 작업 배경을 다시 설명하지 않게 한다.
+- **의미 있는 매 작업이 종료될 때 `NEXT_CHAT_HANDOFF.md`를 최신화한다.** 완료/실패/QA/커밋/Actions/다음 1단계/승인 대기를 포함하며 사실 확인 전의 완료 표현은 금지한다.
+- 현재 상태 변경 시 `STATUS.md`에 날짜 로그를 추가하고 `README.md`의 최신 요약도 동기화한다. 이전 과거 기록은 삭제하지 않는다.
+- GitHub 쓰기 실패 시 다운로드 가능한 최신 로컬 지침서를 제공하고 'GitHub 미반영'임을 명시한다. 자동 백그라운드 갱신을 약속하지 않는다.
+- 기본 운영 **사용자 + ChatGPT 2인**; Codex는 ChatGPT가 직접 할 수 없는 로컬 업로드/파일 접근 같은 예외에서만 제한적으로 투입하고 결과를 ChatGPT가 재검증한다.
+
 ## Source of truth
+- 다음 채팅방 최신 인수인계: `NEXT_CHAT_HANDOFF.md` (상태 현행화 우선)
 - 요구사항: `REQUIREMENTS.md`
 - 작업 현황: `STATUS.md`
 - 캐릭터 일관성: `character/CHARACTER_BIBLE.md`
