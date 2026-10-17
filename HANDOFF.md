@@ -1,3 +1,9 @@
+## [2026-10-17 · GitHub Actions ZIP 검증기 CI 성공]
+- **새 원격 자동 테스트 성공:** GitHub Actions run **39026198826** / commit **4dfd2b9cef915730c9cf13934f8818ca41ea0111** / status completed, conclusion **success**. Python 3.11 문법 검사, CLI smoke test, 존재하지 않는 ZIP을 거부하는 음성 테스트 PASS. 이는 구매자 실제 ZIP을 GitHub runner에서 재다운로드/검사한 테스트는 **아님**.
+- GitHub 검사기: `products/kmong-vol01/verify_release_gate.py` (Python 3.11 + Pillow). 기존 RC 2개는 이 채팅의 별도 로컬 정밀검사로 PNG 65개(Full 46/Wallpaper 19), ZIP CRC 및 디코딩 PASS. **사용자 이미지 외형 승인/겨울 원화 포함/크몽 UI 재심사는 별도 RELEASE_BLOCKED.**
+- 파일 정리: `products/kmong-vol01/KMONG_TWO_MENU_LISTING_DRAFT_2026-10-17.md`, `products/kmong-vol01/WINTER_ORIGINAL_ART_RELEASE_GATE_2026-10-17.md`, `.github/workflows/naon2-two-menu-verify.yml` 신규 등록. 두 RC ZIP 최종본으로 재명명하거나 840876 크몽 제출 금지.
+- 같은 이미지 생성 실패 3회 및 수동 합성 품질 FAIL 기록. 비승인 참고 시안을 구매 ZIP에 포함하지 않음. **다음 '3' = 겨울 독립 원화 확보를 위한 개선된 다음 단계 작업 추진**.
+
 # NAON2 HANDOFF · 최신 2026-10-17
 
 ## [2026-10-17 · '3'=다음 작업 계속 / 겨울 원화 정밀 QA + 재현 가능한 출시 검사]
