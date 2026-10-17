@@ -1,0 +1,22 @@
+name: Temporary NAON2 Reference Pack Reconstruction
+on:
+  push:
+    paths:
+      - 'transfer/NAON2_REF_20261017/**'
+      - '.github/workflows/naon2-refpack-temp.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild and SHA verify reference ZIP
+        run: python3 transfer/NAON2_REF_20261017/assemble.py --output /tmp/NAON2_20261017_NEXT_CHAT_REFERENCE_PACK.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NAON2_TEMP_REFERENCE_20261017
+          path: /tmp/NAON2_20261017_NEXT_CHAT_REFERENCE_PACK.zip
+          retention-days: 3
+          if-no-files-found: error

@@ -1,0 +1,12 @@
+# TEMPORARY NAON2 REFERENCE PACK · DELETE AFTER NEXT CHAT
+**2026-10-17**: User on mobile asked to stage this reference ZIP in private GitHub for the next ChatGPT session to read and **delete afterward**. This folder is temporary transport, **NOT** a sellable product, not a licensed buyer package, and **not** the final approved appearance of all candidates.
+
+## How to reconstruct
+- `python3 transfer/NAON2_REF_20261017/assemble.py`
+- No third-party dependencies. Concatenates 32 binary parts in `manifest.json` order, validates Git blob SHA for each, original ZIP SHA256 and ZIP CRC. Output: `NAON2_20261017_NEXT_CHAT_REFERENCE_PACK.zip`.
+- SHA256: `65903d58ac15c41e5b9180c1cc64f835e0f577c1f4e7b27b94eb1f6b172c16a3`; bytes: **13,050,958**; **14** ZIP entries.
+- GitHub Actions workflow `.github/workflows/naon2-refpack-temp.yml` may also assemble an artifact `NAON2_TEMP_REFERENCE_20261017` (short retention). If Actions is not running/available, use Python reconstruction on a checkout. **Do not claim artifact build success without checking its run.**
+- References include current chosen NAON2 profile guide candidate, 4-product menu planning board (only first two menus selected), winter 6-theme example and phone crops, winter crop **not saleable as original art**, gamer/rain higher-resolution replacement candidates **not automatically approved**, 652×488 profile cover preview. No added raw originals are overwritten.
+- Current plan is in `products/kmong-vol01/NAON2_2026-10-17_EVENING_TWO_MENU_EXECUTION.md`: full collection **19,900원**, wallpaper pack **9,900원**, NAON2 guide included with all buyer packs as a gift/hero, independent winter image to generate, current Kmong service 840876 still 6,000원 under review, edits delegated to Codex after user approval.
+- **CRITICAL CLEANUP:** After next assistant or Codex has actually reconstructed and viewed/retained the references (and transferred any enduring approved new masters into the appropriate permanent `assets/` area with explicit user acceptance), delete this ENTIRE `transfer/NAON2_REF_20261017/` folder (including 32 *.bin, manifest, assembler and README) and the temporary workflow `.github/workflows/naon2-refpack-temp.yml` from **main** in a cleanup commit. Update STATUS.md/HANDOFF.md/NEXT_CHAT_HANDOFF.md and verify deletion in latest main.
+- Removing in a subsequent Git commit cleans latest main, **not historical Git objects**. The temporary bundle contains no credentials.
