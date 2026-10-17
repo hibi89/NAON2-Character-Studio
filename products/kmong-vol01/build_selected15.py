@@ -117,29 +117,8 @@ for i,(p,art,m) in enumerate(items):
 tx(d,68,1630,"일부 이미지는 소형 원본입니다. 전체가 2K 배경화면은 아닙니다.",22,SUB)
 save(spec,imgs/"06_file_specs_1200x1690.jpg",(1200,1690))
 lines="\n".join(f'{i+1:02d}. {m["filename"]}  {m["width"]}x{m["height"]}px' for i,(_,_,m) in enumerate(items))
-buyer_text="""NAON2 WORLD Vol.01 — 나온이의 작은 세계
-
-구성: 선정된 원본 PNG 15장, 이 한국어 안내 1개.
-디지털 파일만 제공하며 실물 배송은 없습니다.
-NAON2는 호기심 많은 고양이 캐릭터입니다.
-크고 둥근 갈색 눈, 회갈색과 흰색 털, 분홍빛 귀와 코,
-풍성하게 말린 꼬리가 특징입니다.
-
-사용 방법: ZIP을 해제한 뒤 PNG를 열거나 개인 기기의
-배경화면으로 설정해 보세요.
-일부 원본은 소형 또는 정사각형 이미지이므로
-모든 그림이 고해상도 PC/모바일 배경화면에 적합하지는 않습니다.
-
-권리 안내 (정식 판매 전 확인해야 할 조건):
-개인 감상 및 개인 기기의 배경화면 사용에 한합니다.
-재판매·재배포·상업적 이용 및 굿즈 제작 권한은 포함하지 않습니다.
-원본 제작에 생성형 AI 도구를 활용했습니다.
-최초 입력 자료의 권리/실제 판매 가능성 검토 및 최종 사용자
-승인 후에만 정식 구매자 파일로 활용하세요.
-
-원본 15장 이미지 크기:
-"""+lines+"\n"
-(out/"USER_GUIDE_KR_DRAFT.txt").write_text(buyer_text,encoding="utf-8")
+buyer_text=Path("products/kmong-vol01/BUYER_GUIDE_KR.txt").read_text(encoding="utf-8")
+(out/"USER_GUIDE_KR.txt").write_text(buyer_text,encoding="utf-8")
 listing="""나온이 NAON2 일러스트 컬렉션 15종
 
 어디에든 나오는 호기심 많은 고양이, NAON2.
@@ -168,7 +147,7 @@ meta=[m for _,_,m in items]
 buyer=out/"NAON2_WORLD_VOL01_15_ORIGINALS_CANDIDATE.zip"
 with zipfile.ZipFile(buyer,"w",compression=zipfile.ZIP_STORED) as z:
     for p,art,m in items:z.write(p,arcname="NAON2_ORIGINAL_15/"+p.name)
-    z.write(out/"USER_GUIDE_KR_DRAFT.txt","USER_GUIDE_KR.txt")
+    z.write(out/"USER_GUIDE_KR.txt","이용안내_KR.txt")
 with zipfile.ZipFile(buyer) as z:
     assert z.testzip() is None and len(z.namelist())==16
     for p,art,m in items:assert sha256(z.read("NAON2_ORIGINAL_15/"+p.name))==m["sha256"]
