@@ -2,7 +2,8 @@
 """NAON2 two-menu read-only ZIP QC. Technical PASS never means release approval.
 Run: python verify_release_gate.py FULL.zip WALLPAPER.zip --json result.json
 """
-import argparse, hashlib, json, struct, sys
+import argparse, hashlib, io, json, struct, sys
+from PIL import Image
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -43,6 +44,8 @@ def check(path,menu):
   result["crc"]="PASS" if bad is None else "FAIL"
   if bad:err.append("ZIP corrupt member: "+bad)
   members=z.namelist()
+  if len(members)!=len(set(members)):err.append("ZIP contains duplicate paths")
+  if any(x.startswith("/") or ".." in x.split("/") for x in members):err.append("ZIP contains unsafe paths")
   pngs=[x for x in members if x.lower().endswith(".png")]
   result["png_count"]=len(pngs)
   if len(pngs)!=expected:err.append("Wrong PNG count")
@@ -66,7 +69,8 @@ def check(path,menu):
     blob=z.read(name)
     try:
      if png_size(blob)!=dim:err.append(f"Bad image resolution: {name}")
-    except Exception:err.append(f"Broken PNG header: {name}")
+     with Image.open(io.BytesIO(blob)) as im: im.verify()
+    except Exception as e:err.append(f"Broken PNG: {name}: {e}")
     unique.add(sha(blob))
    if len(unique)!=len(names):err.append(f"Duplicate byte-identical images in {folder}")
   result["winter_found"]=any("WINTER" in x.upper() or "겨울" in x for x in pngs)
