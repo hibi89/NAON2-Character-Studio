@@ -114,3 +114,10 @@
 - `NAON2_SOLO_VOL01_FULL_ROUGH_PREVIEW_20261017.zip`: 26,257,794 bytes, SHA-256 `8504434ab8ed3df0967ad6878214c08a07e2d8d0b24f9ab21913e6ed439ac2ec`, ZIP 파일 25개 및 전체 매니페스트 해시 일치. **채팅 다운로드만 제공 — GitHub ZIP/PNG 신규 업로드는 미완료**.
 - 초기에 출력된 홍보 콜라주가 잘린 PNG였으므로 제외하고 원본 인물 보존형 디자인 합성으로 전환. 이번 산출물은 **구조 검수/선별용 DRAFT**, 판매권·캐릭터 일치 최종 승인·크몽 등록 카테고리 미검증.
 - 내용 문서: `products/kmong-vol01/NAON2_SOLO_BREADTH_FIRST_2026-10-17.md`. 다음: 사용자 전체 레이아웃 검수·A(정면×배경 팩) vs B(서로 다른 신규 캐릭터 원화 6장) 결정 → 정밀 QA → 최종 ZIP → Codex 등록.
+
+## 2026-10-17 · Codex 등록 준비 지시서 제작 / 제출 차단 조건 명시
+- 기존 26.3MB NAON2 단독 러프 ZIP 현재 파일 재검증: SHA-256 `8504434ab8ed3df0967ad6878214c08a07e2d8d0b24f9ab21913e6ed439ac2ec`, ZIP integrity 및 PC 2560×1440×6/모바일 1440×2560×6 실제 이미지 PASS.
+- 동시에 `QA_MANIFEST.json`에 `ROUGH_NOT_FOR_SALE`·승인 false 6개, 러프 표지에 `INTERNAL DRAFT · NOT FOR SALE` 문구 존재 확인. **따라서 현 ZIP을 크몽에 그대로 제출하거나 구매자에게 납품 금지.**
+- Codex 작업 지시서 `products/kmong-vol01/KMONG_CODEX_REGISTRATION_HANDOFF_2026-10-17.md` 작성. 현 단계 Codex는 계정 인증/카테고리·최저가격·전달방식 확인 및 비공개 임시초안 준비만 가능. **사용자 최종 상품/권리/가격 및 심사 제출 명시 승인** 전 공개·제출 불가.
+- 별도 코드+문서 패키지 `NAON2_KMONG_CODEX_REGISTRATION_HANDOFF_20261017.zip` 채팅 다운로드 생성 완료; 지시서용, 판매 아트 없음. 4,900원은 제안이지 등록 확정가 아님. 제품 유형 허용 여부 현장 확인 필요.
+- 남은 단계: 최종 디자인·콘셉트 시각 검수, 러프 DRAFT 제거, buyer-only ZIP, 이미지/저작권/플랫폼 QA, 사용자 제출 승인. 다온이 판매 제외.
