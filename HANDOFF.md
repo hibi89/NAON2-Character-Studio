@@ -1,3 +1,14 @@
+# NAON2 HANDOFF · 최신 게이트/CI
+
+## [2026-10-17 · 숫자 3 연속 개발 · 겨울 독립 원화 출시 게이트 개선 / CI 검증]
+- **작업 완료 내용:** 기존 2개 구매 RC ZIP(Full PNG 46/Wallpaper PNG 19), 공통 프로필 1536×1024 SHA `7641e2ea75de3fdaf3167a38a92b17eaeb01a314ab04c39bd51f70fb169004ac`을 **읽기 전용 SHA+CRC로 재확인**. 원본 수정/출시 처리/크몽 840876 편집 없음.
+- **겨울 독립 원화 생성은 여전히 미완료:** 이전 포스터 출력 실패 이후 프로필 시트/겨울 참고 중심으로 방식 변경해 시도했으나 다시 상품 소개 합성판이 생성되어 **FAIL/NOT FOR SALE**. 같은 방식 반복 금지. 2026-10-17 이전 로컬 겨울 합성안도 스타일 불일치로 불합격 유지.
+- **실제 신규 기능 (GitHub 반영):** `products/kmong-vol01/winter_art_acceptance.py`: 신규 겨울 마스터 PNG의 디코드·2048×2048 최소 크기·알파 완성·SHA 검증, 명시적 사용자 동의/독립 신규 원화·네 발·눈/이빨/꼬리·이용권 체크리스트 검증; 자동 이미지 이해나 사용권 보증은 아님. `products/kmong-vol01/test_winter_art_acceptance.py` 합성 테스트 6종, `.github/workflows/naon2-winter-approval-gate.yml` 추가.
+- **GitHub Actions 검증:** 실행 [39027519283](https://github.com/hibi89/NAON2-Character-Studio/actions/runs/39027519283), `completed/success` (대상 커밋 `a063e7b58ba8b40ee319a07347d265800a054a24`). 이는 승인 게이트 코드 자동테스트이며 실제 겨울 원화 품질 PASS가 **아님**.
+- **로컬 통합 패키징 키트** `NAON2_WINTER_PIPELINE_QA_KIT_20261017.zip`, 13,309B, SHA256 `3a90f42dc4f7114ae86f70f0b272c25466c3e9b73689053fc6a088e2d81382ed`. Python 3.11 + Pillow 오프라인 단위 테스트 **9/9 PASS**. 두 RC ZIP SHA/CRC 실제 확인. 별도 승인 마스터가 생길 경우 Full **PNG 51** 및 Wallpaper **PNG 22** 예정, 두 판매 메뉴 메인/상세 JPG 각각 5장 자동 제작. 실제 포맷/원화 통합 E2E는 미검증(원화 없음). 로컬 키트는 **현재 채팅 sandbox에만 존재**, GitHub에는 **긴 통합 패키징 소스/키트 바이너리를 올리지 못함**; `products/kmong-vol01/WINTER_PIPELINE_LOCAL_KIT_2026-10-17.md`에 사용법·시험 범위·해시 기록.
+- **중단점/다음 3:** 독립 겨울 원화 확보(사용자가 승인한 캐릭터 기준, 2048px 이상, 모자/목도리/눈사람/설경), 시각 QA 및 승인 → 지금 만든 키트 사용해 두 ZIP/크몽 10 JPG 실제 재생성·검수 → 원본·코드 영구 GitHub 보존 → 사용자의 최종 판매 승인 → Codex만 기존 840876 편집/재심사. 앱/Vercel 배포는 미적용. 신규 외부 파일 전송·유료 작업은 승인 전 금지.
+- **현재 단계:** **PARTIAL/RELEASE_BLOCKED**. 사용자 숫자 `3`은 다음 우선 작업을 계속하라는 뜻이고 기본 원본/판매 등록 권한을 변경하는 승인이 아님.
+
 ## [2026-10-17 · GitHub Actions ZIP 검증기 CI 성공]
 - **새 원격 자동 테스트 성공:** GitHub Actions run **39026198826** / commit **4dfd2b9cef915730c9cf13934f8818ca41ea0111** / status completed, conclusion **success**. Python 3.11 문법 검사, CLI smoke test, 존재하지 않는 ZIP을 거부하는 음성 테스트 PASS. 이는 구매자 실제 ZIP을 GitHub runner에서 재다운로드/검사한 테스트는 **아님**.
 - GitHub 검사기: `products/kmong-vol01/verify_release_gate.py` (Python 3.11 + Pillow). 기존 RC 2개는 이 채팅의 별도 로컬 정밀검사로 PNG 65개(Full 46/Wallpaper 19), ZIP CRC 및 디코딩 PASS. **사용자 이미지 외형 승인/겨울 원화 포함/크몽 UI 재심사는 별도 RELEASE_BLOCKED.**
