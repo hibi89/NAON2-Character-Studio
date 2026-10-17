@@ -1,5 +1,12 @@
 # NAON2-Character-Studio — HANDOFF.md
 
+## [2026-10-17 최신] GitHub 모바일 레퍼런스 임시 업로드 실제 완료
+- GitHub `transfer/NAON2_REF_20261017/`에 ZIP 13,050,958B 바이너리를 총 32개 part로 보관. `manifest.json`/`assemble.py`로 SHA 확인하여 복원 가능.
+- Actions 재구성 실행 `39023003603` SUCCESS, artifact `NAON2_TEMP_REFERENCE_20261017` ID `12096579552`(2026-10-20 만료). ChatGPT가 다운로드 후 원본 ZIP과 바이트 동일 확인(SHA256 `65903d58ac15c41e5b9180c1cc64f835e0f577c1f4e7b27b94eb1f6b172c16a3`).
+- 다음 채팅 담당자는 GitHub 연결에서 아티팩트를 직접 다운받아 참고자료 14개 검토(휴대폰 사용자의 재첨부 요구 금지). 처리 후 `transfer/NAON2_REF_20261017/`와 `.github/workflows/naon2-refpack-temp.yml`을 GitHub main에서 삭제 커밋, NEXT_CHAT_HANDOFF/STATUS/HANDOFF 동기화.
+- 두 메뉴 Full 19,900원 / Wallpaper 9,900원, 공통 NAON2 프로필 보너스 및 메인, 겨울 신규 원화, Codex는 외출 후 840876 수정 담당. 그 전 크몽 기존 6,000원 승인 대기 상태 유지.
+
+
 ## [2026-10-17 저녁 최우선 사용자 결정 · 기존 지시 대체]
 - **오늘 확정한 두 판매 메뉴만 제작:** ① NAON2 디지털 컬렉션 (Full Collection) **19,900원**, ② NAON2 배경화면 팩 (Wallpaper Pack) **9,900원**. 14,900원 SNS 및 24,900원 감정 스티커는 향후 별도.
 - **크몽 기존 서비스 840876을 편집해 두 메뉴를 구성하려는 최신 사용자 요청**. 현 상태는 **6,000원 단일 상품 제출·승인 대기**로 보고되었고, 새로운 두 메뉴/가격 등록·제출·승인은 **아직 하지 않음**. 상품 삭제/중복 신규 등록 금지. 사용자가 외출에서 돌아와 최종 파일 승인한 뒤 Codex만 실제 폼 편집·재심사.
