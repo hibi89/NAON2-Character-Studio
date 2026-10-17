@@ -121,3 +121,9 @@
 - Codex 작업 지시서 `products/kmong-vol01/KMONG_CODEX_REGISTRATION_HANDOFF_2026-10-17.md` 작성. 현 단계 Codex는 계정 인증/카테고리·최저가격·전달방식 확인 및 비공개 임시초안 준비만 가능. **사용자 최종 상품/권리/가격 및 심사 제출 명시 승인** 전 공개·제출 불가.
 - 별도 코드+문서 패키지 `NAON2_KMONG_CODEX_REGISTRATION_HANDOFF_20261017.zip` 채팅 다운로드 생성 완료; 지시서용, 판매 아트 없음. 4,900원은 제안이지 등록 확정가 아님. 제품 유형 허용 여부 현장 확인 필요.
 - 남은 단계: 최종 디자인·콘셉트 시각 검수, 러프 DRAFT 제거, buyer-only ZIP, 이미지/저작권/플랫폼 QA, 사용자 제출 승인. 다온이 판매 제외.
+
+## 2026-10-17 · 최종 출시 협업 방식 재확정: Codex 전체 드라이런 → ChatGPT 마스터피스 → Codex 실제 등록
+- 사용자 지시: **최종 제출물에 들어간 모든 캐릭터 이미지가 사용자 승인한 NAON2 원본과 일치해야 함**. v2를 사용했다는 사실만으로 브랜드 동일성 승인하지 않는다.
+- 러프 12장 재검사: 내부 QA manifest 24파일 해시 24/24 PASS, 12장 모바일/PC PNG 규격 PASS, ZIP 25멤버 integrity PASS. 원본 v2 SHA-256 `fcf6cd58be831bc66ebf72039061fa0d545696ac79f0c3396247eca78b48d059`; 전체 소스 v2 단일 합성으로 추적. 그러나 v2 vs 승인 시트 v1 이마 흰색 무늬/얼굴·눈 비율/꼬리에서 차이점 존재 → **캐릭터 ID 게이트 미승인**, 판매 ZIP 없음.
+- **새 순서**: 1) Codex 실제 크몽 등록폼 끝까지 모의실행하되 최종 제출/공개 절대 금지, 2) Codex가 누락 파일·정확한 업로드 규격/가격·정책을 보고, 3) ChatGPT가 모든 부족한 것을 최종 이미지/설명/판매 ZIP 하나로 보완·QA, 4) 사용자 명시 승인, 5) Codex 실제 크몽 등록·심사 제출.
+- 문서: `products/kmong-vol01/CODEX_FULL_DRY_RUN_2026-10-17.md`, `products/kmong-vol01/CHARACTER_IDENTITY_RELEASE_GATE_2026-10-17.md`. 이전 `KMONG_CODEX_REGISTRATION_HANDOFF_2026-10-17.md`는 초기 사전점검 규격이고 최신 드라이런 문서를 우선.

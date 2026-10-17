@@ -6,6 +6,13 @@
 
 NAON2 캐릭터의 일관성, 기준 이미지, 파생 아트, 크몽 디지털 컬렉션 출시 과정을 기록하는 **비공개 프로젝트**입니다.
 
+## LATEST · 크몽 전체 드라이런 → 최종 마스터피스 → 실제 등록 (2026-10-17)
+
+- **사용자 최신 지시**: 최종 파일의 모든 나온이 캐릭터 이미지가 승인 원본 시트와 동일한 캐릭터인지 전수 검사. 정면 v2를 12장 모두 동일하게 썼다는 사실은 확인됐지만 **v2와 원본 시트의 외형 완전 일치/사용자 승인 미완료**.
+- 이전 러프 ZIP 재검증: manifest 24/24 파일 해시, PC 6+모바일 6 실제 이미지 규격, ZIP integrity PASS. **판매 가능 판정과는 별개**.
+- Codex가 크몽 등록 절차 **최종 제출 직전까지 실제 드라이런** → 실제 필드·규격·빠진 요소 보고 → ChatGPT가 캐릭터 원본 일치 및 최종 썸네일·상세·사용권·구매자 ZIP을 마스터피스로 보완 → 사용자 최종 승인 → Codex가 실제 등록.
+- [캐릭터 원본 일치 릴리스 게이트](products/kmong-vol01/CHARACTER_IDENTITY_RELEASE_GATE_2026-10-17.md) · [Codex 전체 드라이런 프롬프트](products/kmong-vol01/CODEX_FULL_DRY_RUN_2026-10-17.md).
+
 ## NEXT · Codex 크몽 등록 준비 지시서 (2026-10-17)
 
 - [코덱스 등록 준비 지시서](products/kmong-vol01/KMONG_CODEX_REGISTRATION_HANDOFF_2026-10-17.md) 문서화 완료. 기존 러프 ZIP 재검증 통과(PC 6장 + 모바일 6장), 그러나 `ROUGH_NOT_FOR_SALE` 및 썸네일 `INTERNAL DRAFT · NOT FOR SALE` 확인 → **제출 불가**.
