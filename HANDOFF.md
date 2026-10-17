@@ -1,3 +1,11 @@
+## [2026-10-17 · '3' 재개 / 겨울 패키징 원본 코드 전체 GitHub 반영 완료 / 신규 원화 대기]
+- **완료(코드·검증):** `products/kmong-vol01/winter_release_pipeline.py`, 최신 `verify_release_gate.py`, 테스트·실제 RC smoke test·승인 TEMPLATE·README의 **6개 GitHub 바이너리/문자 내용 blob SHA = 로컬 원본 6/6**. 소스와 테스트는 main에 영구 보존. GitHub Actions `NAON2 winter package safety tests` run **39029592559**, SHA **c728b16555029c3b65fb2cd5dcfad681caeeff91**, **completed/success**, Python 3.11 unit **11/11 PASS** 및 없는 ZIP 차단 검사. 로컬 실제 2 RC의 SHA/CRC 검증 PASS.
+- **중요 수정:** 배경화면 팩에 겨울 **독립 원화 파일도 포함**시켜야 하는 누락 오류 수정(미래 목표 Full 51 PNG / Wallpaper **23 PNG**, 기존 46/19 RC는 무변경). 가로 2560×1440 네이티브 원화 해상도 인정; Wallpaper 상세페이지 표-안내 겹침 방지. 완성 원화 획득 전 최종 수량으로 광고/등록 금지.
+- **실제 테스트:** 기존 Full RC SHA `2acd5725434dde4dbd80d35ec7f6fa132eec20da4685425437dc8a6cb24f470a` / Wallpaper RC SHA `f435e6729c5892afcf332cbe879e8ca51de2b00c9f0bb63013b9fe6cfad4ad14`, 파일 그대로 보존. 판매 불가 테스트 PNG로 통합 생성 Full 51 / Wallpaper 23 및 크몽 JPG 10개 검수 후 격리 임시 결과물 **자동 삭제**. 사용자 승인서·겨울 실물 원화는 만들거나 위조하지 않음.
+- **남은 차단:** 신규 독립 고품질 겨울 나온이 **0장**, 시각 QA/권리/사용자 승인 대기. 실패한 상품 합성 포스터 생성·불일치 수동 합성 재시도 금지. 사용자 승인 없는 외부 이미지 전송·유료 편집 금지. 이전 출시 RC **NOT FOR SALE**, 크몽 840876 **기존 6,000원 심사 대기 기록 유지, 이번 작업에서 UI 미접속/미변경**.
+- **세부 지침**: `products/kmong-vol01/WINTER_PIPELINE_V2_VALIDATION_2026-10-17.md`; 코드 설치·실행 `products/kmong-vol01/NAON2_WINTER_PIPELINE_README_2026-10-17.md`. 제공한 로컬 ZIP `NAON2_WINTER_PIPELINE_V2_TESTED_20261017.zip` 17,835 B SHA256 `7004ecd232656f39941dd4560a261cc8960f26ba8609b6a6e34a123bafe761a3`. `transfer/NAON2_REF_20261017/` 임시 레퍼런스는 영구 완성 원화 보존 전 절대 삭제하지 않음.
+- 다음 `3`: **더 이상 구축된 ZIP 검증기/CI 재작업 금지.** 필요한 것은 독립 겨울 원화의 실제 고화질 창작/편집 경로 확보와 사용자 시각 검수. 완성 후 두 ZIP과 JPG를 자동 생성해 통합 검증→최종 승인→Codex만 840876 수정. 배포/Vercel 미적용.
+
 # NAON2 HANDOFF · 최신 게이트/CI
 
 ## [2026-10-17 · 숫자 3 연속 개발 · 겨울 독립 원화 출시 게이트 개선 / CI 검증]
