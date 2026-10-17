@@ -17,6 +17,8 @@ from zipfile import ZipFile, BadZipFile
 from PIL import Image
 
 PROFILE = 'NAON2_PROFILE_GUIDE.png'
+WINTER_BONUS = '06_WINTER_BONUS/NAON2_WINTER_SCENE_505x282_WITH_LETTERING.png'
+WINTER_BONUS_SHA = '6b4dac0e553c2d965005d1749bc39b001c5e5a757ad176b4c2e1e917461ded9e'
 PROFILE_SHA = '7641e2ea75de3fdaf3167a38a92b17eaeb01a314ab04c39bd51f70fb169004ac'
 WINTER_MASTER = '01_ORIGINAL_ARTWORKS/NAON2_WINTER_INDEPENDENT_ORIGINAL.png'
 WINTER_DERIVATIVES = [
@@ -42,11 +44,11 @@ def verified_png(blob):
         img.verify()
     return dims
 
-def check_zip(path, menu, with_winter, winter_sha):
+def check_zip(path, menu, with_winter, winter_sha, with_bonus=False):
     full = menu == 'full'
     base_count = 8 if full else 6
     n = base_count + int(with_winter)
-    expected = (51 if full else 23) if with_winter else (46 if full else 19)
+    expected = (51 if full else 23) if with_winter else ((47 if full else 20) if with_bonus else (46 if full else 19))
     needed = {
         '01_ORIGINAL_ARTWORKS/': (13 if full else 0) + int(with_winter),
         '02_PC_16x9/': n,
@@ -92,7 +94,7 @@ def check_zip(path, menu, with_winter, winter_sha):
                 guide = z.read('00_README_KR.txt').decode('utf-8')
                 if '개인' not in guide:
                     errors.append('Usage rights missing in buyer guide')
-                if with_winter and '아직 품질 기준 충족 전' in guide:
+                if (with_winter or with_bonus) and '아직 품질 기준 충족 전' in guide:
                     errors.append('Pending winter message survived final package')
                 if not with_winter and '겨울 나온이 독립 원화는 아직' in guide:
                     report['warnings'].append('Winter artwork is not included in RC')
@@ -115,6 +117,15 @@ def check_zip(path, menu, with_winter, winter_sha):
                     digests.append(sha(data))
                 if len(set(digests)) != len(digests):
                     errors.append(f'Duplicate byte-identical files in {folder}')
+            if with_bonus:
+                if WINTER_BONUS not in paths:
+                    errors.append('Winter small bonus missing')
+                else:
+                    bonus = z.read(WINTER_BONUS)
+                    if verified_png(bonus) != (505,282) or sha(bonus) != WINTER_BONUS_SHA:
+                        errors.append('Winter small bonus pixels or hash differ from source')
+                if len([p for p in paths if p.startswith('06_WINTER_BONUS/') and p.endswith('.png')]) != 1:
+                    errors.append('Winter bonus folder must contain exactly one PNG')
             if with_winter:
                 for required in [WINTER_MASTER,*WINTER_DERIVATIVES,*( [WINTER_LOCK] if full else [] )]:
                     if required not in paths:
@@ -125,6 +136,7 @@ def check_zip(path, menu, with_winter, winter_sha):
                 if WINTER_MASTER in paths:
                     errors.append('Unapproved winter original found in pre-winter RC')
             report['winter_original_present'] = WINTER_MASTER in paths
+            report['winter_bonus_present'] = WINTER_BONUS in paths
     except (BadZipFile, OSError, ValueError, UnicodeError) as exc:
         errors.append('ZIP or media malformed: '+str(exc))
     report['technical_pass'] = not errors
@@ -135,9 +147,12 @@ def main():
     a.add_argument('full',type=Path)
     a.add_argument('wallpaper',type=Path)
     a.add_argument('--with-winter',action='store_true')
+    a.add_argument('--with-winter-bonus',action='store_true',help='Verify the user-chosen original 505x282 winter bonus (no new high-resolution art required)')
     a.add_argument('--winter-master',type=Path)
     a.add_argument('--json',type=Path)
     opt = a.parse_args()
+    if opt.with_winter and opt.with_winter_bonus:
+        a.error('Choose either independent high-resolution winter mode OR original-size winter bonus mode')
     if opt.with_winter and not opt.winter_master:
         a.error('--with-winter requires --winter-master to compare exact master bytes')
     winter_sha = ''
@@ -146,12 +161,13 @@ def main():
             a.error('Winter master file not found')
         with opt.winter_master.open('rb') as f:
             winter_sha = hashlib.file_digest(f,'sha256').hexdigest()
-    result = [check_zip(opt.full,'full',opt.with_winter,winter_sha),
-              check_zip(opt.wallpaper,'wallpaper',opt.with_winter,winter_sha)]
+    result = [check_zip(opt.full,'full',opt.with_winter,winter_sha,opt.with_winter_bonus),
+              check_zip(opt.wallpaper,'wallpaper',opt.with_winter,winter_sha,opt.with_winter_bonus)]
     report = {
         'items':result,
         'technical_pass':all(x['technical_pass'] for x in result),
-        'winter_art_in_both':all(x.get('winter_original_present',False) for x in result),
+        'winter_art_in_both':all(x.get('winter_original_present',False) or x.get('winter_bonus_present',False) for x in result),
+        'winter_delivery_type':'505x282_original_bonus' if opt.with_winter_bonus else ('separately_edited_independent_art' if opt.with_winter else 'none'),
         'winter_master_sha256':winter_sha if opt.with_winter else None,
         'user_art_approval':'UNVERIFIED',
         'kmong_platform_approval':'UNVERIFIED',
